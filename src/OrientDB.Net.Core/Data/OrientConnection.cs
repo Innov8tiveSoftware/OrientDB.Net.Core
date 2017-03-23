@@ -41,5 +41,20 @@ namespace OrientDB.Net.Core.Data
             var data = _connectionProtocol.ExecuteCommand(sql, _serializer);
             return data;
         }
+
+        public IOrientDBTransaction CreateTransaction()
+        {
+            return _connectionProtocol.CreateTransaction(_serializer);
+        }
+
+        public IOrientDBDatabaseHandle CreateDatabase(string name, StorageType storage)
+        {
+            return _connectionProtocol.CreateDatabase
+        }
+
+        public void DeleteDatabase(IOrientDBDatabaseHandle handle)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
